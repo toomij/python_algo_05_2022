@@ -22,7 +22,7 @@ upLimSymb = ord(input("Введите символ для верхней гра�
 
 resIntRand = random.randrange(lowLimInt, upLimInt)
 resRealRand = random.uniform(lowLimReal, upLimReal)
-resSymbRand = chr(random.randint(lowLimSymb,upLimSymb))
+resSymbRand = chr(random.randint(lowLimSymb, upLimSymb))
 
 print(f'Случайное целое число: {resIntRand}')
 print(f'Случайное вещественое число: {resRealRand}')
