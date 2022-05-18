@@ -15,5 +15,12 @@ def gcd2(m, n):
     return gcd2(n, m % n)
 
 
+def gcd3(m, n):
+    while n != 0:
+        m, n = n, m % n
+    return m
+
+
 print(gcd1(54, 24))
 print(gcd2(54, 24))
+print(gcd3(54, 24))
