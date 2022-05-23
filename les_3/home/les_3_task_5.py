@@ -5,6 +5,7 @@ SIZE = 10
 array = [random.randint(-100, 100) for _ in range(SIZE)]
 print(array)
 
+# вариант 1
 i = 0
 index = -1
 
@@ -18,6 +19,18 @@ while i < SIZE:
 
 print(f'Число {array[index]} на позиции {index}')
 
+# вариант 2
+
+num = float('-inf')
+index = -1
+
+for i, item in enumerate(array):
+    if 0 > item > num:
+        num = item
+        index = i
+
+print(f'Число {num} на позиции {index}')
+# вариант 3
 # def MaxElem(list1):
 #     maxelement = list1[0]
 #     for element in list1:
