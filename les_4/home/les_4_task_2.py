@@ -108,4 +108,4 @@ cProfile.run('prime(1000)')
 # 8 function calls in 0.000 seconds cProfile.run('prime(10)')
 
 # 29 function calls in 0.001 seconds cProfile.run('prime(100)')
-172 function calls in 0.017 seconds Profile.run('prime(1000)')
+# 172 function calls in 0.017 seconds Profile.run('prime(1000)')
