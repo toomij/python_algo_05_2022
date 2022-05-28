@@ -30,6 +30,7 @@ for i, item in enumerate(array):
         index = i
 
 print(f'Число {num} на позиции {index}')
+
 # вариант 3
 # def MaxElem(list1):
 #     maxelement = list1[0]
