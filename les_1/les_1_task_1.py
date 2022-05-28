@@ -2,17 +2,31 @@
 # Выполнить над числом 5 побитовый сдвиг вправо и влево на два знака.
 
 a = 5
+print(f'{a} = {bin(a)}')
 b = 6
+print(f'{b} = {bin(b)}')
 
-o = a | b
-an = a & b
-xo = a ^ b
+#AND
+print(f'{a} and {b} = {a & b} ({bin(a & b)})')
+# o = a | b
 
-a2 = a << 2
-a3 = a >> 2
+# OR
+print(f'{a} or {b} = {a | b} ({bin(a | b)})')
 
-print(f'И : {an}')
-print(f'ИЛИ : {o}')
-print(f'XOR : {xo}')
-print(f'<<2 : {a2}')
-print(f'>>2 : {a3}')
+# XOR
+print(f'{a} xor {b} = {a ^ b} ({bin(a ^ b)})')
+
+print(f'{a} >> 2 = {a >> 2} ({bin(a >> 2)})')
+print(f'{a} << 2 = {a << 2} ({bin(a << 2)})')
+
+# an = a & b
+# xo = a ^ b
+
+# a2 = a << 2
+# a3 = a >> 2
+
+# print(f'И : {an}')
+# print(f'ИЛИ : {o}')
+# print(f'XOR : {xo}')
+# print(f'<<2 : {a2}')
+# print(f'>>2 : {a3}')
