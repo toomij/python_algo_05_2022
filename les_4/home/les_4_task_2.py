@@ -51,22 +51,19 @@ def sieve(n):
     #print(result)
     return result
 
-def prime(n):
-    #a, n = True, int(input())  # n - число, до которого хотим дойти
-    a = True
-    result = []
-    for x in range(2, n):
-        for y in range(1, n):
-            if x != y and y != 1:
-                if not x % y:
-                    a = False
-                    break
-        if a == True:
-            #print(x, end=' ')
-            result.append(x)
-        a = True
-    #print(result)
-    return result
+def prime(num):
+    count = 1
+    current_prime = 2
+
+    while count < num:
+        current_prime += 1
+        #for i in range(2, current_prime):
+        for i in range(2, int(current_prime ** 0.5) + 1):
+            if current_prime % i == 0:
+                break
+        else:
+            count += 1
+    return current_prime
 
 
 cProfile.run('prime(1000)')
