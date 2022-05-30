@@ -106,3 +106,20 @@ cProfile.run('prime(1000)')
 
 # 29 function calls in 0.001 seconds cProfile.run('prime(100)')
 # 172 function calls in 0.017 seconds Profile.run('prime(1000)')
+
+# В первом случае алгоритм работает
+# на 100 числах рабоатет 22 милисекунды и вызывает 6 функций
+#
+#     python -m timeit -n 1000 -s "import les_4_task_2" "les_4_task_2.sieve(100)"
+#     1000 loops, best of 3: 22 usec per loop
+#
+# # 6 function calls in 0.000 seconds cProfile.run('sieve(1000)')
+# 
+#
+# Во втором случае
+#
+# аглоритм работает на 100 числах 189 милисекунды и вызывает 172 функции.
+# python -m timeit -n 1000 -s "import les_4_task_2" "les_4_task_2.prime(100)"
+# 1000 loops, best of 3: 289 usec per loop
+# 172 function calls in 0.017 seconds Profile.run('prime(1000)')
+#
