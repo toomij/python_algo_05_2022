@@ -114,7 +114,7 @@ cProfile.run('prime(1000)')
 #     1000 loops, best of 3: 22 usec per loop
 #
 # # 6 function calls in 0.000 seconds cProfile.run('sieve(1000)')
-# 
+#
 #
 # Во втором случае
 #
