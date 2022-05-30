@@ -13,7 +13,7 @@ b = int(input('Введите второе число: '))
 while True:
     sign = input('Введите знак операции [+, -, *, /] или 0 для завершения: ')
     if sign == "0":
-        break;
+        break
     if sign == "+":
         print(f'{a} + {b} = {a + b}')
     if sign == "-":
