@@ -12,12 +12,19 @@
 # OS: macOS-12.4-arm64-arm-64bit
 # Arch: ('64bit', '')
 # Machine: arm64
-# RAM:
+# RAM: 16384 MB
 # CPU: Apple M1
 
-В первом варианате используется массив. Объем памяти 372 байта.
-Во втором варианте используется множества. Объем памяти 876 байта.
-В третьем варианте используется словарь по умолчанию. Объем памяти 844 байта.
+# В первом варианте используется массив. Объем памяти 372 байта.
+# Во втором варианте используется множества. Объем памяти 876 байта.
+# В третьем варианте используется словарь по умолчанию. Объем памяти 844 байта.
+#
+# Общий вывод: Все коллекции ссылаются на объекты целых чисел в памяти.
+# Каждый объект целого числа занимает 28 байт. Поэтому для 8-ми таких объектов
+# программа аллоцирует 8*28 = 224 байта. Остальная память выделяется под разные типы коллекций.
+# В нашем случае меньше всего памяти использует классический массив. Но скорость
+# доступа к элементам массива медленнее, чем, например, в словаре по умолчанию.
+
 
 import sys
 from collections import deque
@@ -29,12 +36,13 @@ def my_system_info():
     import psutil
     import cpuinfo
 
-    print('Python ver:', platform.python_version())  #
-    print('OS:', platform.platform())  #
-    print('Arch:', platform.architecture())  #
-    print('Machine:', platform.machine())  #
+    print('Python ver:', platform.python_version())  # 3.8.9
+    print('OS:', platform.platform())  # macOS-12.4-arm64-arm-64bit
+    print('Arch:', platform.architecture())  # 64bit
+    print('Machine:', platform.machine())  # arm64
     print('RAM:')
-    print('CPU:', cpuinfo.get_cpu_info()['brand_raw'])  #
+    print(psutil.virtual_memory().total // 1024 ** 2, 'MB') # 16384 MB
+    print('CPU:', cpuinfo.get_cpu_info()['brand_raw'])  # Apple M1
 
 
 def show(x):
@@ -103,5 +111,4 @@ for k, v in numbers.items():
     print(f'Числу {k} кратны {v} чисел из диапазона от 2 до 99')
 
 print(show(numbers))
-
 # print(my_system_info())
